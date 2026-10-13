@@ -4,20 +4,232 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My First Website</title>
+  <meta name="theme-color" content="#0b132b">
+  <meta name="description" content="Welcome to my website. Discover useful resources, learn new skills, and explore new opportunities.">
+  <title>My Digital Space</title>
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0b132b;
+      --blue: #2563eb;
+      --light: #f5f7fb;
+      --text: #263247;
+    }
+
+    html { scroll-behavior: smooth; }
+
     body {
       font-family: Arial, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 14px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0b132b, #1d4ed8);
+      color: white;
       text-align: center;
-      background: #f5f7fa;
+      padding: 85px 20px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.25);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 7vw, 54px);
+      line-height: 1.15;
+      max-width: 750px;
+      margin: 0 auto 20px;
+    }
+
+    .hero p {
+      max-width: 580px;
+      margin: 0 auto 28px;
+      color: #e0e7ff;
+    }
+
+    .button {
+      display: inline-block;
+      background: #ffffff;
+      color: var(--navy);
+      padding: 13px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 5px;
+    }
+
+    .button.primary {
+      background: #60a5fa;
+      color: #0b132b;
+    }
+
+    section {
+      padding: 65px 7%;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 30px;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .intro {
+      max-width: 620px;
+      margin: 0 auto 35px;
+      color: #64748b;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      padding: 28px 22px;
+      border-radius: 14px;
+      text-align: left;
+      border: 1px solid #e5eaf2;
+      box-shadow: 0 8px 25px rgba(15,23,42,.05);
+    }
+
+    .card .emoji {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .about {
+      background: white;
+    }
+
+    .cta {
+      background: #e8efff;
+      border-radius: 18px;
+      max-width: 950px;
+      margin: auto;
       padding: 40px 20px;
     }
-    h1 { color: #0b132b; }
-    p { color: #555; }
+
+    footer {
+      background: var(--navy);
+      color: #cbd5e1;
+      text-align: center;
+      padding: 28px 15px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 520px) {
+      header { padding: 16px 5%; }
+      nav a { margin-left: 8px; font-size: 12px; }
+      .logo { font-size: 18px; }
+      .hero { padding: 65px 18px; }
+      section { padding: 48px 6%; }
+    }
   </style>
 </head>
 <body>
-  <h1>Welcome to My Website!</h1>
-  <p>I am learning to build websites with GitHub.</p>
+
+  <header>
+    <a class="logo" href="#home">My Digital Space</a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Explore</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <span class="tag">WELCOME TO MY WEBSITE</span>
+      <h1>Your Next Opportunity Starts Here.</h1>
+      <p>A place to discover useful resources, build new skills, and take the next step toward your goals.</p>
+      <a class="button primary" href="#services">Explore More</a>
+      <a class="button" href="#about">Learn About Me</a>
+    </section>
+
+    <section id="services">
+      <h2 class="section-title">Explore What’s Possible</h2>
+      <p class="intro">Discover ideas and resources designed to help you learn, grow, and move forward.</p>
+
+      <div class="cards">
+        <article class="card">
+          <div class="emoji">📚</div>
+          <h3>Learn New Skills</h3>
+          <p>Explore helpful knowledge and practical ideas you can apply in everyday life.</p>
+        </article>
+
+        <article class="card">
+          <div class="emoji">🚀</div>
+          <h3>Grow Your Ideas</h3>
+          <p>Turn your interests into projects and take consistent steps toward your goals.</p>
+        </article>
+
+        <article class="card">
+          <div class="emoji">💡</div>
+          <h3>Discover Resources</h3>
+          <p>Find inspiration and useful tools to support your personal development.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <h2 class="section-title">About This Website</h2>
+      <p class="intro">This is my digital space for sharing ideas, useful information, and opportunities. I’m building something better, one step at a time.</p>
+
+      <div class="cta">
+        <h2 class="section-title">Ready to Explore?</h2>
+        <p>Start discovering what this website has to offer.</p>
+        <a class="button primary" href="#services">Get Started</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 My Digital Space. All rights reserved.</p>
+    <p>Built with care using GitHub Pages.</p>
+  </footer>
+
 </body>
 </html>
